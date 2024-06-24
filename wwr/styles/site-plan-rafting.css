@@ -25,7 +25,8 @@ body {
 
 header {
   padding: 20px;
-  background-color: var(--accent1-color);
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
 
 nav {
