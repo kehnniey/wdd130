@@ -18,6 +18,11 @@ nav a {
     display: block;
     padding: 20px;
 }
+
+.social-links {
+    display: flex; 
+    gap: 2px; 
+}
 h1 {
     color: steelblue;
     padding: .5rem; 
