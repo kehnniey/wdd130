@@ -3,9 +3,11 @@
 
 :root {
   --primary-color: #396e94;
-  --secondary-color: #e7c24f;
-  --accent1-color: #a43312;
+  --secondary-color: #c8d8e4;
+  --accent1-color: #52ab98;;
   --accent2-color: #381d2a;
+  --background-color: #f4f4f9;
+  --font-family: 'Roboto', sans-serif;
 
   --heading-font: 'Roboto', sans-serif;
   --paragraph-font: 'Open Sans', sans-serif;

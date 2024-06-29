@@ -1,0 +1,129 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+:root {
+    --primary-color: #396e94;
+    --secondary-color: #c8d8e4;
+    --accent1-color: #52ab98;;
+    --accent2-color: #381d2a;
+    --background-color: #f4f4f9;
+    --font-family: 'Roboto', sans-serif;
+  
+    --heading-font: 'Roboto', sans-serif;
+    --paragraph-font: 'Open Sans', sans-serif;
+  
+    --nav-background-color: #396e94;
+    --nav-link-color: #ffffff;
+    --nav-hover-link-color: #e7c24f;
+    --nav-hover-background-color: #a43312;
+  }
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+}
+
+header img {
+    height: 50px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+}
+
+.hero h1 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 2em;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+figure img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+figcaption {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    border-radius: 0 0 8px 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a img {
+    height: 30px;
+}
