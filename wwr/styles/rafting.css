@@ -1,6 +1,4 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
     --primary-color: #396e94;
@@ -18,13 +16,12 @@
     --nav-hover-link-color: #e7c24f;
     --nav-hover-background-color: #a43312;
   }
+  
 body {
     font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--background-color);
     margin: 0;
     padding: 0;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -37,7 +34,7 @@ header {
 }
 
 header img {
-    height: 50px;
+    height: 100px;
 }
 
 nav a {
@@ -45,6 +42,7 @@ nav a {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
+    
 }
 
 nav a:hover {
@@ -52,40 +50,56 @@ nav a:hover {
 }
 
 .hero {
+    position: relative;
+    padding: 100px 20px;
     text-align: center;
-    padding: 20px;
-    background-color: var(--secondary-color);
+    color: white;
+}
+
+.hero .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .hero h1 {
     margin: 0;
     padding: 10px 0;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
-.hero p {
-    max-width: 600px;
-    margin: 20px auto;
-    line-height: 1.6;
+.hero .hero-content {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
 }
 
-.hero img {
+.hero .mission-statement {
+    max-width: 500px;
+    color: var(--text-color);
+    padding: 20px;
+    text-align: left;
+     
+}
+
+.hero .mission-statement img {
     width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
+    border-radius: 10px;
+    margin-top: 20px;
+    
 }
+
+
 
 section {
     padding: 20px;
-    text-align: center;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
+    text-align: left;
 }
 
 figure {
@@ -95,15 +109,15 @@ figure {
 }
 
 figure img {
-    width: 100%;
+    width: 250px;
     display: block;
     border-radius: 8px;
 }
 
 figcaption {
-    text-align: center;
+    text-align: left;
     padding: 10px 0;
-    background-color: var(--secondary-color);
+    
     border-radius: 0 0 8px 8px;
 }
 
