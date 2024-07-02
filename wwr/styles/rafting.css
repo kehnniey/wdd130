@@ -87,7 +87,7 @@ nav a:hover {
     align-items: flex-start;
     justify-content: space-between;
     background-size: cover;
-    background:  var(--accent2-color);
+    background:  rgba(148, 152, 154, 0.0);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 30px var(--nav-hover-link-color);
