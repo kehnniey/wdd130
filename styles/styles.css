@@ -27,22 +27,30 @@ nav a {
     color: white;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem; 
-}
 
 h1 {
     color: steelblue;
     padding: 0.5rem;
+    position: relative; 
+    text-align: center;
 }
 
+h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px; 
+    background-color: steelblue;
+    position: absolute;
+    bottom: 2px; 
+    left: 0;
+}
 img {
     width: 150px;
     height: auto;
     border: 1px solid steelblue;
     padding: 2px;
-    box-shadow: 0 0 30px gray;
+    box-shadow: 0 0 30px rgb(244, 241, 241);
 }
 
 header,
@@ -72,13 +80,12 @@ aside {
 }
 
 main img {
-    width: 110px;
+    width: 140px;
     height: auto;
     border: 1px solid steelblue;
-    padding: 2px;
-    box-shadow: 0 0 30px gray;
+    padding: 5px;
     float: right;
-    margin: 0 0 2rem 2rem;
+    margin: 2rem 0 2rem 2rem;
 }
 
 p {
@@ -86,13 +93,14 @@ p {
     padding: 0;
 }
 
+
 aside {
     text-align: center;
 }
 
 aside img {
-    width: 200px;
-    height: auto;
+    width: 250px;
+    height: 350px;
 }
 
 aside h2 {
@@ -111,18 +119,31 @@ footer {
 /* Class Selectors */
 
 .box {
-    margin: 1rem;
+    margin: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem;
     background-color: #ddd;
     color: #000;
 }
 
+ul.box {
+    list-style-type: none;
+    margin: 1rem;
+}
 ul.box .intro {
     list-style-type: none;
     font-weight: bold;
+    
+    
+    
 }
 
+
+ .indent li {
+    list-style-type:disc;
+    margin-left: 1rem;
+    
+}
 .index {
-    padding-left: 2rem;
+    padding-left: 5rem;
 }
