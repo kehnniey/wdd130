@@ -1,53 +1,86 @@
 // Array of movies with their titles and image paths
 const movies = [
-    { title: "Home Alone", image: "images/home_alone.jpg" },
+    { title: "Home Alone", image: "images/homealone.jpg" },
     { title: "Elf", image: "images/elf.jpg" },
-    { title: "The Polar Express", image: "images/polar_express.jpg" },
-    { title: "A Christmas Carol", image: "images/christmas_carol.jpg" },
+    { title: "Charlie Brown Christmas", image: "images/charliebrownchristmas.jpg" },
+    { title: "Christmas Vacation", image: "images/christmasvacation.jpg" },
     { title: "How the Grinch Stole Christmas", image: "images/grinch.jpg" },
-    { title: "Love Actually", image: "images/love_actually.jpg" },
-    { title: "The Santa Clause", image: "images/santa_clause.jpg" },
-    { title: "It's a Wonderful Life", image: "images/wonderful_life.jpg" },
-    { title: "Frosty the Snowman", image: "images/frosty.jpg" },
-    { title: "Rudolph the Red-Nosed Reindeer", image: "images/rudolph.jpg" }
+    { title: "Home Alone 2", image: "images/homealoneii.jpg" },
+    { title: "The Santa Clause", image: "images/santaclause.jpg" },
+    { title: "Jingle All The Way", image: "images/jinglealltheway.jpg" },
+    { title: "The Nightmare Before Christmas", image: "images/thenightmareb.jpg" }
 ];
 
 // Array of team members
-const teamMembers = ["Alice", "Bob", "Charlie", "Diana", "Eve", "Frank", "Grace", "Hank", "Ivy", "Jack"];
+const teamMembers = ["Alex", "Christie", "Kehinde", "William", "Elizabeth", "Katya", "Brian", "David", "Jeff"];
 
 // DOM Elements
 const startButton = document.getElementById("start-game");
+const nextButton = document.getElementById("next-movie");
 const revealButton = document.getElementById("reveal-team-member");
-const teamMemberDisplay = document.getElementById("team-member");
+const resetButton = document.getElementById("reset-game");
 const movieDisplay = document.getElementById("movie");
 const movieImage = document.getElementById("movie-image");
-const selectedTeamMemberDiv = document.getElementById("selected-team-member");
+const teamMemberDisplay = document.getElementById("team-member");
 const selectedMovieDiv = document.getElementById("selected-movie");
+const selectedTeamMemberDiv = document.getElementById("selected-team-member");
 
-// Function to pick a random item from an array
-function getRandomItem(array) {
-    return array[Math.floor(Math.random() * array.length)];
+let currentIndex = 0;
+
+// Function to display the current movie
+function displayMovie() {
+    if (currentIndex < movies.length) {
+        const currentMovie = movies[currentIndex];
+        movieDisplay.textContent = currentMovie.title;
+        movieImage.src = currentMovie.image;
+        movieImage.alt = `${currentMovie.title} Poster`;
+        movieImage.classList.remove("hidden");
+        selectedMovieDiv.classList.remove("hidden");
+        revealButton.classList.remove("hidden");
+    }
 }
 
-// Start the game
-startButton.addEventListener("click", () => {
-    // Select a random movie
-    const randomMovie = getRandomItem(movies);
-    movieDisplay.textContent = randomMovie.title;
-    movieImage.src = randomMovie.image;
-    movieImage.alt = `${randomMovie.title} Poster`;
-    movieImage.classList.remove("hidden");
-    selectedMovieDiv.classList.remove("hidden");
+// Function to reveal the current team member
+function revealTeamMember() {
+    if (currentIndex < teamMembers.length) {
+        const currentTeamMember = teamMembers[currentIndex];
+        teamMemberDisplay.textContent = currentTeamMember;
+        selectedTeamMemberDiv.classList.remove("hidden");
+        revealButton.classList.add("hidden");
+    }
+}
 
-    // Show the reveal button
-    revealButton.classList.remove("hidden");
-});
+// Function to move to the next movie
+function nextMovie() {
+    currentIndex++;
+    if (currentIndex < movies.length && currentIndex < teamMembers.length) {
+        displayMovie();
+        selectedTeamMemberDiv.classList.add("hidden");
+    } else {
+        nextButton.classList.add("hidden");
+    }
+}
 
-// Reveal the team member
-revealButton.addEventListener("click", () => {
-    // Select a random team member
-    const randomTeamMember = getRandomItem(teamMembers);
-    teamMemberDisplay.textContent = randomTeamMember;
-    selectedTeamMemberDiv.classList.remove("hidden");
+// Function to reset the game
+function resetGame() {
+    currentIndex = 0;
+    selectedMovieDiv.classList.add("hidden");
+    selectedTeamMemberDiv.classList.add("hidden");
+    startButton.classList.remove("hidden");
+    nextButton.classList.add("hidden");
     revealButton.classList.add("hidden");
+    resetButton.classList.add("hidden");
+}
+
+// Event listeners
+startButton.addEventListener("click", () => {
+    currentIndex = 0;
+    displayMovie();
+    startButton.classList.add("hidden");
+    nextButton.classList.remove("hidden");
+    resetButton.classList.remove("hidden");
 });
+
+revealButton.addEventListener("click", revealTeamMember);
+nextButton.addEventListener("click", nextMovie);
+resetButton.addEventListener("click", resetGame);
