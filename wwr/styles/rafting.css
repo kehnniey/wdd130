@@ -236,7 +236,7 @@ figcaption {
 }
 
 /* Contact Info Section */
-.contact-info {
+/* .contact-info {
     margin-bottom: 40px;
 }
 
@@ -279,7 +279,7 @@ figcaption {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-}
+}*/
 
 .employee-profiles {
     display: flex;
@@ -298,7 +298,7 @@ figcaption {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
-}
+} 
 
 
 /* Home Specific Styles */
