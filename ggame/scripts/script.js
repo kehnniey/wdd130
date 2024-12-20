@@ -12,7 +12,7 @@ const movies = [
 ];
 
 // Array of team members
-const teamMembers = ["Alex", "Christie", "Kehinde", "William", "Elizabeth", "Katya", "Brian", "David", "Jeff"];
+const teamMembers = ["Alex & Ben", "Christie & William", "Kehinde", "Matt & Brandon", "Elizabeth", "Katya", "Brian", "David", "Jeff"];
 
 // DOM Elements
 const startButton = document.getElementById("start-game");
